@@ -13,10 +13,12 @@ Rails.application.routes.draw do
 
   root to: "tasks#index"
   
-  resources :tasks
-  
   get 'signup', to: 'users#new'
   resources :users, only: [:show, :new, :create]
+  
+  resources :tasks
+  
+ 
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
